@@ -1,0 +1,120 @@
+:root {
+  --purple: #9c27b0;
+  --purple-dark: #872398;
+  --gray-light: #9e9e9e26;
+  --gray: #9e9e9e;
+  --gray-dark: #9e9e9e36;
+}
+
+body {
+  background: var(--gray-light);
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #333;
+  font-size: 16px;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.card {
+  width: 500px;
+  height: 500px;
+  padding: 1rem;
+}
+
+@keyframes progressBar {
+  0% {
+    width: 50px;
+    background: #fff;
+    color: var(--purple-dark);
+  }
+
+  50% {
+    color: #333;
+  }
+
+  100% {
+    width: calc(100% - 0.5rem);
+    background: var(--purple);
+    color: #fff;
+  }
+}
+
+.server-list {
+  margin: 0;
+  padding: 0;
+}
+
+.server-item {
+  display: grid;
+  align-items: center;
+  margin: 0.35rem 0;
+  list-style-type: none;
+  border: 2px solid var(--purple);
+  border-radius: 4px;
+}
+
+.server-item span {
+  padding: 0.5rem;
+  padding-right: 0;
+  color: var(--purple-dark);
+}
+
+.server-item--running {
+  display: block;
+  animation: progressBar 20s linear infinite;
+}
+
+.button {
+  background-color: var(--purple);
+  color: #fff;
+  outline: none;
+  border: 2px solid var(--purple);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  appearance: none;
+}
+
+.button:hover {
+  background-color: var(--purple-dark);
+}
+
+.button--outlined {
+  color: var(--purple);
+  background-color: #fff;
+  border: 2px solid var(--purple);
+}
+
+.button--outlined:hover {
+  color: #fff;
+}
+
+.button-group,
+.input-group {
+  margin: 1rem 0;
+}
+
+input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  outline: none;
+  border: 2px solid var(--gray);
+}
+
+input:hover {
+  border: 2px solid var(--purple);
+}
+
+#taskInput {
+  width: 3rem;
+  margin: 0.5rem 0;
+}
